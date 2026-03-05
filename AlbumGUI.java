@@ -20,7 +20,7 @@ public class AlbumGUI {
     }
 
     private JButton enrereButton;
-    private JLabel imarge;
+    private JLabel imatge;
     private JLabel pais;
     private JLabel grup;
     private JLabel nombre;
@@ -35,7 +35,7 @@ public class AlbumGUI {
 
         URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
         ImageIcon icon1 = new ImageIcon(url);
-        imarge.setIcon(icon1);
+        imatge.setIcon(icon1);
 
 
         envantButton.addActionListener(new ActionListener() {
@@ -48,7 +48,7 @@ public class AlbumGUI {
                     nombre.setText(String.valueOf(cromo.getNumero()));
                     URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
                     ImageIcon icon1 = new ImageIcon(url);
-                    imarge.setIcon(icon1);
+                    imatge.setIcon(icon1);
                 }
             }
         });
@@ -63,7 +63,7 @@ public class AlbumGUI {
                     nombre.setText(String.valueOf(cromo.getNumero()));
                     URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
                     ImageIcon icon1 = new ImageIcon(url);
-                    imarge.setIcon(icon1);
+                    imatge.setIcon(icon1);
                 }
             }
         });

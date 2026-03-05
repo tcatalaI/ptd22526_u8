@@ -43,7 +43,15 @@ public class Album {
     }
 
     public Cromo getSeguentCromo() {
-        index++;
+      int indexIni = index;
+        if (index == -1) {
+            index = 0; // Inicia l'index a 0 si és la primera vegada que es crida
+        }
+        else {
+            index++;
+        }
+
+
         while (index < album.length && album[index] == null) {
             index++;
         }
@@ -51,10 +59,15 @@ public class Album {
         if (index < album.length) {
             return album[index];
         }
-        return null; // Retorna null si no hi ha més cromos
+        else {
+            index = indexIni; // Reinicia l'index a la posició inicial si s'ha arribat al final de l'àlbum
+            return album[indexIni]; // Retorna el mateix cromo si no hi ha més cromos
+
+        }
     }
 
     public Cromo getAnteriorCromo() {
+        int indexInicial = index;
         index--;
         while (index >= 0 && album[index] == null) {
             index--;
@@ -63,7 +76,9 @@ public class Album {
         if (index >= 0) {
             return album[index];
         }
-        return null; // Retorna null si no hi ha més cromos
+        else
+            return album[indexInicial];
+
     }
     public void aferrarPaquet(Paquet paquet) {
         int nombreCromos = paquet.getCromos().size();
