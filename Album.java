@@ -6,16 +6,26 @@ import java.io.IOException;
 public class Album {
     private Cromo[] album;
     private int cromosAferrats = 0;
+    private int index=-1; //
 
     public int getCromosAferrats() {
         return cromosAferrats;
     }
 
 
+
     public Album() {
         album = new Cromo[864]; // Inicialitza l'array amb 864 elements
     }
 
+
+    private Cromo getCromo(int numero) {
+        int posicio = numero - 1;
+        if (posicio >= 0 && posicio < album.length) {
+            return album[posicio];
+        }
+        return null; // Retorna null si el número no és vàlid
+    }
 
     private boolean aferrarCromo(Cromo cromo) {
         int posicio = cromo.getNumero() - 1;
@@ -32,6 +42,29 @@ public class Album {
         }
     }
 
+    public Cromo getSeguentCromo() {
+        index++;
+        while (index < album.length && album[index] == null) {
+            index++;
+        }
+
+        if (index < album.length) {
+            return album[index];
+        }
+        return null; // Retorna null si no hi ha més cromos
+    }
+
+    public Cromo getAnteriorCromo() {
+        index--;
+        while (index >= 0 && album[index] == null) {
+            index--;
+        }
+
+        if (index >= 0) {
+            return album[index];
+        }
+        return null; // Retorna null si no hi ha més cromos
+    }
     public void aferrarPaquet(Paquet paquet) {
         int nombreCromos = paquet.getCromos().size();
         int apuntador = 0;

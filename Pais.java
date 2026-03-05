@@ -2,6 +2,7 @@ public class Pais {
     private String codi;
     private String nom;
     private char grup;
+    private String imatge;
 
     // Constructor
     public Pais(String codi, String nom, char grup) {
@@ -20,7 +21,8 @@ public Pais(String codi, char grup) {
     public Pais(String codi) {
         this.codi = codi;
         this.nom = codi; // Valor per defecte per a nom
-        this.grup = ' '; // Valor per defecte per a grup
+        this.grup = 'X'; // Valor per defecte per a grup
+        this.imatge = codi.toUpperCase() + ".png"; // Assignar la imatge basada en el codi
     }
     public String getCodi() {
         return codi;
@@ -32,6 +34,10 @@ public Pais(String codi, char grup) {
 
     public char getGrup() {
         return grup;
+
+    }
+    public String getImatge() {
+        return imatge;
     }
 
     // Setters
