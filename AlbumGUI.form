@@ -8,14 +8,6 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="3baf2" class="javax.swing.JLabel" binding="pais">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="pais"/>
-        </properties>
-      </component>
       <component id="6db3e" class="javax.swing.JLabel" binding="grup">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -55,6 +47,14 @@
         </constraints>
         <properties>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="3baf2" class="javax.swing.JLabel" binding="pais">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="pais"/>
         </properties>
       </component>
     </children>
