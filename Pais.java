@@ -9,12 +9,15 @@ public class Pais {
         this.codi = codi;
         this.nom = nom;
         this.grup = grup;
+        this.imatge = codi.toUpperCase() + ".png"; // Assignar la imatge basada en el codi
+
     }
 // Constructor que només treballa amb codi i grup
 public Pais(String codi, char grup) {
     this.codi = codi;
     this.grup = grup;
     this.nom = codi;              // Mateix
+    this.imatge = codi.toUpperCase() + ".png"; // Assignar la imatge basada en el codi
 }
 
 // Constructor que només treballa amb codi

@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
 public class Mundial {
 
 private static    Pais[] paisosClassificats = {
@@ -10,8 +15,7 @@ private static    Pais[] paisosClassificats = {
         new Pais("COL"), new Pais("ECU"), new Pais("PAR"), new Pais("URU"),
         null, null, null, null, null, null, null, null, null, null,
         null, null, null, null, null, null,
-        null, null, null, null
-};
+        null, null, null, null};
 
 
     public static boolean participaAlMundial2026(String codiPais) {
@@ -51,6 +55,35 @@ private static    Pais[] paisosClassificats = {
 
         paisosClassificats[posicio] = nouPais;
            return true;
+
+    }
+
+    public static void carregarPaisos (String nom ) {
+            // Ens passen un argument
+            try {
+                FileReader llegir = new FileReader(nom);
+                BufferedReader br = new BufferedReader(llegir);
+                String linia;
+                int pos =0;
+                while ((linia = br.readLine()) != null) {
+                    // Separar els camps utilitzant la coma com a delimitador
+                    String[] camps = linia.split(",");
+                    System.out.println(camps[0] + " - " + camps[1]);
+                    Pais p1 = new Pais(camps[0], camps[1].charAt(0));
+                    Mundial.assignarPaisEnPosicio(p1, pos);
+                    pos++;
+
+
+
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("No s'ha trobat el fitxer: " + nom);
+
+            } catch (IOException e) {
+                System.out.println("Error en llegir línia: ");
+            }
+
+
 
     }
 

@@ -7,7 +7,6 @@ public class AlbumGUI {
     private JPanel root;
     private JButton envantButton;
     private Album album = new Album();
-    private Paquet paquet = new Paquet();
     private int index =0;
     private Cromo cromo;
 
@@ -26,6 +25,9 @@ public class AlbumGUI {
     private JLabel nombre;
 
     public AlbumGUI() {
+
+        Mundial.carregarPaisos("mundial_2026_classificats.csv");
+        Paquet paquet = new Paquet();
         album.aferrarPaquet(paquet);
         cromo = album.getSeguentCromo();
         pais.setText(cromo.getPais().getNom());
