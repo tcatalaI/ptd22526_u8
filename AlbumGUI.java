@@ -7,7 +7,6 @@ public class AlbumGUI {
     private JPanel root;
     private JButton envantButton;
     private Album album = new Album();
-    private int index =0;
     private Cromo cromo;
 
     public static void main(String[] args) {
