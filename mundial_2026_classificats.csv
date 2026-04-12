@@ -1,42 +1,48 @@
-MEX,A
-RSA,A
-KOR,A
-CAN,B
-SUI,B
-QAT,B
-BRA,C
-MAR,C
-HTI,C
-SCO,C
-USA,D
-PAR,D
-AUS,D
-GER,E
-CUW,E
-CIV,E
-ECU,E
-NED,F
-JPN,F
-TUN,F
-BEL,G
-IRN,G
-EGY,G
-NZL,G
-ESP,H
-URU,H
-KSA,H
-CPV,H
-FRA,I
-SEN,I
-NOR,I
-ARG,J
-ALG,J
-AUT,J
-JOR,J
-POR,K
-COL,K
-UZB,K
-ENG,L
-CRO,L
-GHA,L
-PAN,L
+MEX,Mèxic,A
+RSA,Sud-àfrica,A
+KOR,Corea del Sud,A
+CZE,Txèquia,A
+USA,Estats Units,B
+JPN,Japó,B
+EGY,Egipte,B
+SUI,Suïssa,B
+CAN,Canadà,C
+MAR,Marroc,C
+CRO,Croàcia,C
+PER,Perú,C
+BRA,Brasil,D
+NED,Països Baixos,D
+GHA,Ghana,D
+AUS,Austràlia,D
+ARG,Argentina,E
+DEN,Dinamarca,E
+CMR,Camerun,E
+IRQ,Iraq,E
+ESP,Espanya,F
+POL,Polònia,F
+TUN,Tunísia,F
+NZL,Nova Zelanda,F
+FRA,França,G
+COL,Colòmbia,G
+IRN,Iran,G
+JAM,Jamaica,G
+ENG,Anglaterra,H
+URU,Uruguai,H
+KSA,Aràbia Saudita,H
+CPV,Cap Verd,H
+GER,Alemanya,I
+ECU,Equador,I
+ALG,Algèria,I
+CHN,Xina,I
+POR,Portugal,J
+SEN,Senegal,J
+VEN,Veneçuela,J
+UAE,Emirats Àrabs Units,J
+ITA,Itàlia,K
+BEL,Bèlgica,K
+PAR,Paraguai,K
+PAN,Panamà,K
+AUT,Àustria,L
+SWE,Suècia,L
+NGA,Nigèria,L
+CRC,Costa Rica,L

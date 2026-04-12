@@ -76,8 +76,11 @@ public class Album {
         if (index >= 0) {
             return album[index];
         }
-        else
+        else {
+            index = indexInicial; // Reinicia l'index a la posició inicial si s'ha arribat al principi de l'àlbum
             return album[indexInicial];
+        }
+
 
     }
     public void aferrarPaquet(Paquet paquet) {

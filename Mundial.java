@@ -2,6 +2,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 
 public class Mundial {
 
@@ -17,7 +22,9 @@ private static    Pais[] paisosClassificats = {
         null, null, null, null, null, null,
         null, null, null, null};
 
-
+public static Pais[] getPaisosClassificats() {
+    return paisosClassificats;
+}
     public static boolean participaAlMundial2026(String codiPais) {
 
         for (Pais pais : paisosClassificats) {
@@ -68,8 +75,8 @@ private static    Pais[] paisosClassificats = {
                 while ((linia = br.readLine()) != null) {
                     // Separar els camps utilitzant la coma com a delimitador
                     String[] camps = linia.split(",");
-                    System.out.println(camps[0] + " - " + camps[1]);
-                    Pais p1 = new Pais(camps[0], camps[1].charAt(0));
+                    System.out.println(camps[0] + " - " + camps[1]+ " - " + camps[2]);
+                    Pais p1 = new Pais(camps[0], camps[1], camps[2].charAt(0));
                     Mundial.assignarPaisEnPosicio(p1, pos);
                     pos++;
 
@@ -86,5 +93,45 @@ private static    Pais[] paisosClassificats = {
 
 
     }
+    public static void inserirBD(Pais[] p_paisos) {
+
+        String url = "jdbc:mysql://localhost:3306/mundial26";
+        String usuari = "root";
+        String contrasenya = "";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, usuari, contrasenya);
+
+            String sql = "INSERT INTO pais (pai_cod, pai_nom, pai_gru) VALUES (?, ?, ?)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            for (Pais pais : p_paisos) {
+                if (pais != null) {
+                    try {
+                        stmt.setString(1, pais.getCodi());
+                        stmt.setString(2, pais.getNom());
+                        stmt.setString(3, String.valueOf(pais.getGrup()));
+
+                        int filesInserides = stmt.executeUpdate();
+
+                        if (filesInserides > 0) {
+                            System.out.println("S'ha inserit el pais " + pais.getCodi());
+                        }
+
+                    } catch (SQLException e) {
+                        System.out.println("No s'ha pogut inserir el pais " + pais.getCodi());
+                    }
+                }
+            }
+
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("No s'han pogut inserir les dades.");
+        }
+    }
+
 
 }

@@ -27,6 +27,7 @@ public class AlbumGUI {
     public AlbumGUI() {
 
         Mundial.carregarPaisos("mundial_2026_classificats.csv");
+        Mundial.inserirBD(Mundial.getPaisosClassificats());
         Paquet paquet = new Paquet();
         album.aferrarPaquet(paquet);
         cromo = album.getSeguentCromo();
@@ -34,7 +35,6 @@ public class AlbumGUI {
         grup.setText(String.valueOf(cromo.getPais().getGrup()));
         nombre.setText(String.valueOf(cromo.getNumero()));
         System.out.println(cromo.getPais().getImatge());
-
         URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
         ImageIcon icon1 = new ImageIcon(url);
         imatge.setIcon(icon1);
