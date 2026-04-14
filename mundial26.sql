@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-04-2026 a las 09:29:26
+-- Tiempo de generación: 14-04-2026 a las 09:36:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cromo` (
-  `cro_id` smallint(6) NOT NULL,
-  `cro_anyinc` smallint(6) DEFAULT NULL,
-  `cro_alc` decimal(10,0) DEFAULT NULL,
-  `cro_pes` decimal(10,0) NOT NULL,
-  `cro_pos` text NOT NULL,
-  `cro_nom` varchar(30) NOT NULL,
-  `cro_datnai` date DEFAULT NULL,
-  `cro_pai_cod` varchar(3) NOT NULL
+                         `cro_id` smallint(6) NOT NULL,
+                         `cro_anyinc` smallint(6) DEFAULT NULL,
+                         `cro_alc` decimal(10,0) DEFAULT NULL,
+                         `cro_pes` decimal(10,0) NOT NULL,
+                         `cro_pos` text NOT NULL,
+                         `cro_nom` varchar(30) NOT NULL,
+                         `cro_datnai` date DEFAULT NULL,
+                         `cro_pai_cod` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -45,9 +45,9 @@ CREATE TABLE `cromo` (
 --
 
 CREATE TABLE `pais` (
-  `pai_cod` varchar(3) NOT NULL,
-  `pai_nom` varchar(15) NOT NULL,
-  `pai_gru` varchar(1) NOT NULL
+                        `pai_cod` varchar(3) NOT NULL,
+                        `pai_nom` varchar(15) NOT NULL,
+                        `pai_gru` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -55,53 +55,54 @@ CREATE TABLE `pais` (
 --
 
 INSERT INTO `pais` (`pai_cod`, `pai_nom`, `pai_gru`) VALUES
-('ALG', 'Algèria', 'I'),
-('ARG', 'Argentina', 'E'),
-('AUS', 'Austràlia', 'D'),
-('AUT', 'Àustria', 'L'),
-('BEL', 'Bèlgica', 'K'),
-('BRA', 'Brasil', 'D'),
-('CAN', 'Canadà', 'C'),
-('CHN', 'Xina', 'I'),
-('CMR', 'Camerun', 'E'),
-('COL', 'Colòmbia', 'G'),
+                                                         ('ALG', 'Algèria', 'J'),
+                                                         ('ARG', 'Argentina', 'J'),
+                                                         ('AUS', 'Austràlia', 'D'),
+                                                         ('AUT', 'Àustria', 'J'),
+                                                         ('BEL', 'Bèlgica', 'G'),
+                                                         ('BIH', 'Bòsnia Herceg.', 'B'),
+                                                         ('BRA', 'Brasil', 'C'),
+                                                         ('CAN', 'Canadà', 'B'),
+                                                         ('CIV', 'Costa d\'Ivori', 'E'),
+('COD', 'Rep. Dem. Congo', 'K'),
+('COL', 'Colòmbia', 'K'),
 ('CPV', 'Cap Verd', 'H'),
-('CRC', 'Costa Rica', 'L'),
-('CRO', 'Croàcia', 'C'),
-('CZE', 'Txèquia', 'A'),
-('DEN', 'Dinamarca', 'E'),
-('ECU', 'Equador', 'I'),
-('EGY', 'Egipte', 'B'),
-('ENG', 'Anglaterra', 'H'),
-('ESP', 'Espanya', 'F'),
-('FRA', 'França', 'G'),
-('GER', 'Alemanya', 'I'),
-('GHA', 'Ghana', 'D'),
+('CRO', 'Croàcia', 'L'),
+('CUW', 'Curaçao', 'E'),
+('CZE', 'República Txeca', 'A'),
+('ECU', 'Equador', 'E'),
+('EGY', 'Egipte', 'G'),
+('ENG', 'Anglaterra', 'L'),
+('ESP', 'Espanya', 'H'),
+('FRA', 'França', 'I'),
+('GER', 'Alemanya', 'E'),
+('GHA', 'Ghana', 'L'),
+('HAI', 'Haití', 'C'),
 ('IRN', 'Iran', 'G'),
-('IRQ', 'Iraq', 'E'),
-('ITA', 'Itàlia', 'K'),
-('JAM', 'Jamaica', 'G'),
-('JPN', 'Japó', 'B'),
+('IRQ', 'Iraq', 'I'),
+('JOR', 'Jordània', 'J'),
+('JPN', 'Japó', 'F'),
 ('KOR', 'Corea del Sud', 'A'),
 ('KSA', 'Aràbia Saudita', 'H'),
 ('MAR', 'Marroc', 'C'),
 ('MEX', 'Mèxic', 'A'),
-('NED', 'Països Baixos', 'D'),
-('NGA', 'Nigèria', 'L'),
-('NZL', 'Nova Zelanda', 'F'),
-('PAN', 'Panamà', 'K'),
-('PAR', 'Paraguai', 'K'),
-('PER', 'Perú', 'C'),
-('POL', 'Polònia', 'F'),
-('POR', 'Portugal', 'J'),
+('NED', 'Països Baixos', 'F'),
+('NOR', 'Noruega', 'I'),
+('NZL', 'Nova Zelanda', 'G'),
+('PAN', 'Panamà', 'L'),
+('PAR', 'Paraguai', 'D'),
+('POR', 'Portugal', 'K'),
+('QAT', 'Qatar', 'B'),
 ('RSA', 'Sud-àfrica', 'A'),
-('SEN', 'Senegal', 'J'),
+('SCO', 'Escòcia', 'C'),
+('SEN', 'Senegal', 'I'),
 ('SUI', 'Suïssa', 'B'),
-('SWE', 'Suècia', 'L'),
+('SWE', 'Suècia', 'F'),
 ('TUN', 'Tunísia', 'F'),
+('TUR', 'Turquia', 'D'),
 ('URU', 'Uruguai', 'H'),
-('USA', 'Estats Units', 'B'),
-('VEN', 'Veneçuela', 'J');
+('USA', 'Estats Units', 'D'),
+('UZB', 'Uzbekistan', 'K');
 
 --
 -- Índices para tablas volcadas

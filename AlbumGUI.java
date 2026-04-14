@@ -30,15 +30,25 @@ public class AlbumGUI {
         Mundial.inserirBD(Mundial.getPaisosClassificats());
         Paquet paquet = new Paquet();
         album.aferrarPaquet(paquet);
+        paquet = new Paquet();     // Crear un nou paquet per a aferrar més cromos
+        album.aferrarPaquet(paquet);
         cromo = album.getSeguentCromo();
         pais.setText(cromo.getPais().getNom());
         grup.setText(String.valueOf(cromo.getPais().getGrup()));
         nombre.setText(String.valueOf(cromo.getNumero()));
         System.out.println(cromo.getPais().getImatge());
         URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
-        ImageIcon icon1 = new ImageIcon(url);
-        imatge.setIcon(icon1);
+        if (url == null) {
+            imatge.setText("Imatge no trobada");
+            imatge.setIcon(null);
 
+        }
+        else {
+
+            ImageIcon icon1 = new ImageIcon(url);
+            imatge.setIcon(icon1);
+            imatge.setText(""); // Clear the text if the image is found
+        }
 
         envantButton.addActionListener(new ActionListener() {
             @Override
@@ -49,8 +59,16 @@ public class AlbumGUI {
                     grup.setText(String.valueOf(cromo.getPais().getGrup()));
                     nombre.setText(String.valueOf(cromo.getNumero()));
                     URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
-                    ImageIcon icon1 = new ImageIcon(url);
-                    imatge.setIcon(icon1);
+                    if (url == null) {
+                        imatge.setText("Imatge no trobada");
+                        imatge.setIcon(null);
+                    }
+                    else {
+
+                        ImageIcon icon1 = new ImageIcon(url);
+                        imatge.setIcon(icon1);
+                        imatge.setText(""); // Clear the text if the image is found
+                    }
                 }
             }
         });
@@ -64,8 +82,16 @@ public class AlbumGUI {
                     grup.setText(String.valueOf(cromo.getPais().getGrup()));
                     nombre.setText(String.valueOf(cromo.getNumero()));
                     URL url = this.getClass().getResource("/imatges/" + cromo.getPais().getImatge());
-                    ImageIcon icon1 = new ImageIcon(url);
-                    imatge.setIcon(icon1);
+                    if (url == null) {
+                        imatge.setText("Imatge no trobada");
+                        imatge.setIcon(null);
+                    }
+                    else {
+
+                        ImageIcon icon1 = new ImageIcon(url);
+                        imatge.setIcon(icon1);
+                        imatge.setText(""); // Clear the text if the image is found
+                    }
                 }
             }
         });
